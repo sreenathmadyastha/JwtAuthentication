@@ -42,6 +42,27 @@ public class AuthController : ControllerBase
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return Ok(new { TestToken = tokenHandler.WriteToken(token) });
     }
+    [HttpGet("generate-test-nonadmin")]
+    public IActionResult GenerateTestTokenForNonAdmin()
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        // incoming-jwt-secret-key - external prvoider provided key
+        // Purpose: This is used only for validating the incoming JWT token from an external authentication provider (
+        // e.g., Auth0, Okta, or another service that issued the original token to your frontend).
+        var incomingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("IncomingJwtSecretKeyForValidation256BitsOrMore"));
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new[]
+            {
+            new Claim(ClaimTypes.NameIdentifier, "testuser"),
+            new Claim(ClaimTypes.Role, "NonAdmin")
+        }),
+            Expires = DateTime.UtcNow.AddHours(1),
+            SigningCredentials = new SigningCredentials(incomingKey, SecurityAlgorithms.HmacSha256Signature)
+        };
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return Ok(new { TestToken = tokenHandler.WriteToken(token) });
+    }
 
 
 

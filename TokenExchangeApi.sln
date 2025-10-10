@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenExchangeApi", "TokenExchangeApi.csproj", "{66A03288-6B21-8ED6-C2EE-625E55701F3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66A03288-6B21-8ED6-C2EE-625E55701F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A03288-6B21-8ED6-C2EE-625E55701F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A03288-6B21-8ED6-C2EE-625E55701F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A03288-6B21-8ED6-C2EE-625E55701F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A926655-8BF1-4407-90E5-32A97F5EBB0E}
+	EndGlobalSection
+EndGlobal
